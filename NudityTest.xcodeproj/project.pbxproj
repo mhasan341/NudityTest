@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,12 @@
 		5118119928F5F56400F24548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5118119728F5F56400F24548 /* Main.storyboard */; };
 		5118119B28F5F56600F24548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5118119A28F5F56600F24548 /* Assets.xcassets */; };
 		5118119E28F5F56600F24548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5118119C28F5F56600F24548 /* LaunchScreen.storyboard */; };
+		B8BC1A000C54B2323580844B /* Pods_NudityTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7DFD6F57552D1793F9FDD9 /* Pods_NudityTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		387587C66DF923357486D2CB /* Pods-NudityTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NudityTest.debug.xcconfig"; path = "Target Support Files/Pods-NudityTest/Pods-NudityTest.debug.xcconfig"; sourceTree = "<group>"; };
+		50C522BFDC6555EBFE688973 /* Pods-NudityTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NudityTest.release.xcconfig"; path = "Target Support Files/Pods-NudityTest/Pods-NudityTest.release.xcconfig"; sourceTree = "<group>"; };
 		5118118E28F5F56400F24548 /* NudityTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NudityTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5118119128F5F56400F24548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5118119328F5F56400F24548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		5118119A28F5F56600F24548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5118119D28F5F56600F24548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5118119F28F5F56600F24548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7DFD6F57552D1793F9FDD9 /* Pods_NudityTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NudityTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BC1A000C54B2323580844B /* Pods_NudityTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A421FF70DF954CE15E47EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD7DFD6F57552D1793F9FDD9 /* Pods_NudityTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5118118528F5F56400F24548 = {
 			isa = PBXGroup;
 			children = (
 				5118119028F5F56400F24548 /* NudityTest */,
 				5118118F28F5F56400F24548 /* Products */,
+				B9071DC75A42A21B6CB74637 /* Pods */,
+				08A421FF70DF954CE15E47EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = NudityTest;
 			sourceTree = "<group>";
 		};
+		B9071DC75A42A21B6CB74637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				387587C66DF923357486D2CB /* Pods-NudityTest.debug.xcconfig */,
+				50C522BFDC6555EBFE688973 /* Pods-NudityTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 511811A228F5F56600F24548 /* Build configuration list for PBXNativeTarget "NudityTest" */;
 			buildPhases = (
+				8A0E3BE1E20F42B7EE407809 /* [CP] Check Pods Manifest.lock */,
 				5118118A28F5F56400F24548 /* Sources */,
 				5118118B28F5F56400F24548 /* Frameworks */,
 				5118118C28F5F56400F24548 /* Resources */,
+				4D06FFBDD11BE5F6220D46F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +129,7 @@
 				};
 			};
 			buildConfigurationList = 5118118928F5F56400F24548 /* Build configuration list for PBXProject "NudityTest" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D06FFBDD11BE5F6220D46F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NudityTest/Pods-NudityTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NudityTest/Pods-NudityTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NudityTest/Pods-NudityTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A0E3BE1E20F42B7EE407809 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NudityTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5118118A28F5F56400F24548 /* Sources */ = {
@@ -216,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +350,7 @@
 		};
 		511811A328F5F56600F24548 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387587C66DF923357486D2CB /* Pods-NudityTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,11 +359,13 @@
 				DEVELOPMENT_TEAM = 8FNYAR5ABD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NudityTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To Pick a picture for our test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +381,7 @@
 		};
 		511811A428F5F56600F24548 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C522BFDC6555EBFE688973 /* Pods-NudityTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,11 +390,13 @@
 				DEVELOPMENT_TEAM = 8FNYAR5ABD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NudityTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To Pick a picture for our test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
