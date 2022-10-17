@@ -13,6 +13,7 @@
 		5118119928F5F56400F24548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5118119728F5F56400F24548 /* Main.storyboard */; };
 		5118119B28F5F56600F24548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5118119A28F5F56600F24548 /* Assets.xcassets */; };
 		5118119E28F5F56600F24548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5118119C28F5F56600F24548 /* LaunchScreen.storyboard */; };
+		51F2DED928FDD10300CDE9FB /* nsfw_2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 51F2DED828FDD10300CDE9FB /* nsfw_2.mlmodel */; };
 		B8BC1A000C54B2323580844B /* Pods_NudityTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7DFD6F57552D1793F9FDD9 /* Pods_NudityTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		5118119A28F5F56600F24548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5118119D28F5F56600F24548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5118119F28F5F56600F24548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51F2DED828FDD10300CDE9FB /* nsfw_2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = nsfw_2.mlmodel; sourceTree = "<group>"; };
 		CD7DFD6F57552D1793F9FDD9 /* Pods_NudityTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NudityTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 		5118119028F5F56400F24548 /* NudityTest */ = {
 			isa = PBXGroup;
 			children = (
+				51F2DED828FDD10300CDE9FB /* nsfw_2.mlmodel */,
 				5118119128F5F56400F24548 /* AppDelegate.swift */,
 				5118119328F5F56400F24548 /* SceneDelegate.swift */,
 				5118119528F5F56400F24548 /* ViewController.swift */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5118119628F5F56400F24548 /* ViewController.swift in Sources */,
+				51F2DED928FDD10300CDE9FB /* nsfw_2.mlmodel in Sources */,
 				5118119228F5F56400F24548 /* AppDelegate.swift in Sources */,
 				5118119428F5F56400F24548 /* SceneDelegate.swift in Sources */,
 			);

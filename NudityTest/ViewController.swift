@@ -8,6 +8,7 @@
 import UIKit
 import PhotosUI
 import NSFWDetector
+import CoreML
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PHPickerViewControllerDelegate {
 
@@ -51,12 +52,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     resultLabel.font = UIFont.systemFont(ofSize: 18)
     resultLabel.text = "Waiting for image"
+    resultLabel.numberOfLines = 3
+
 
     NSLayoutConstraint.activate([
       resultLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
       resultLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
       resultLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-      resultLabel.heightAnchor.constraint(equalToConstant: 40)
+      resultLabel.heightAnchor.constraint(equalToConstant: 60)
     ])
   }
 
@@ -175,22 +178,57 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
       return
     }
 
-    print("Image Picked from Camera")
+    print("Image Picked from Camera ")
 
     self.imageView.image = image
     checkNudityIn(image: image)
   }
 
   func checkNudityIn(image inputImage: UIImage){
+
+    let nsfw = nsfw_2()
+
+    guard let buffer = inputImage.buffer(), let output = try? nsfw.prediction(data: buffer) else {
+      fatalError("Unexpected runtime error.")
+    }
+
+    // Grab the result from prediction
+    let proba = output.prob[1].doubleValue
+
+
     NSFWDetector.shared.check(image: inputImage, completion: { result in
       switch result {
         case let .success(nsfwConfidence: confidence):
           let confidencePercent = confidence * 100
-          self.resultLabel.text = "Image Nudity: \(String(format: "%.2f", confidencePercent))%"
+          self.resultLabel.text = "Image Nudity: \(String(format: "%.2f", confidencePercent))% \(String(format: "%.6f", proba * 100))%"
         default:
           break
       }
     })
+
   }
+
+
 }
 
+// MARK: - UIImage
+extension UIImage {
+
+  func buffer() -> CVPixelBuffer? {
+    var pixelBuffer: CVPixelBuffer? = nil
+
+    let width = 224
+    let height = 224
+
+    let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
+    CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
+    CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue:0))
+
+    let colorspace = CGColorSpaceCreateDeviceRGB()
+    let bitmapContext = CGContext(data: CVPixelBufferGetBaseAddress(pixelBuffer!), width: width, height: height, bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: colorspace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)!
+
+    bitmapContext.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
+
+    return pixelBuffer
+  }
+}
